@@ -1,7 +1,7 @@
 <meta http-equiv="refresh" content="3" />
 
 
-<h1>Alumnos   <%= $ccc.name %></h1>
+<h1>Listado de Alumnos   <%= $ccc.name %></h1>
 <br>
 <br>
 <table>
@@ -19,9 +19,9 @@
     <% @stus.each do |stu| %>
       <tr>
         <td><%= stu.name %></td>
+        <td><%= stu.group %></td>
        </tr>
    <% end %>
   </tbody>
 </table>
-
 
