@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2021_07_04_151107) do
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.bigint "school_id", null: false
-    t.datetime "created_at", precision: 6
-    t.datetime "updated_at", precision: 6
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["school_id"], name: "index_groups_on_school_id"
   end
 
@@ -38,18 +38,17 @@ ActiveRecord::Schema.define(version: 2021_07_04_151107) do
 
   create_table "schools", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6
-    t.datetime "updated_at", precision: 6
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "students", force: :cascade do |t|
     t.string "name"
-    t.string "mat"
+    t.integer "mat"
     t.bigint "school_id", null: false
     t.bigint "group_id", null: false
-    t.datetime "created_at", precision: 6
-    t.datetime "updated_at", precision: 6
-    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["group_id"], name: "index_students_on_group_id"
     t.index ["school_id"], name: "index_students_on_school_id"
   end
