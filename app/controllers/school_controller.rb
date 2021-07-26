@@ -2,7 +2,7 @@ class SchoolController < ApplicationController
     def index
         @schools = School.all
         @groups  = Group.all
-        $yolis = 89
+        
     end
 
     def show

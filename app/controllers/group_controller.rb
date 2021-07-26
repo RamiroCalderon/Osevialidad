@@ -4,9 +4,10 @@ class GroupController < ApplicationController
     end
 
     def show
-        @students = List.where(group_id:1)
+        @students = List.where(group_id:$yo)
         @cls=Group.find(params[:id])
         $cam=School.where(params[:id])
+        $yo=params[:id]
     end
    
 end
