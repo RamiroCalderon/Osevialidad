@@ -10,5 +10,14 @@
   <% end %>
 </ul>
 
+
+<ul>
+<% @drops.each do |drop| %>
+    <button style="height:50px;width:200px">
+    <%= link_to drop.name, drop %>
+    </button>
+  <% end %>
+</ul>
+
 <button style="height:50px;width:200px">
 <%= link_to 'General', dropoff_index_path %>
