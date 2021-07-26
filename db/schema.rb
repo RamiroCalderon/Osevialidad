@@ -10,20 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_26_034234) do
+ActiveRecord::Schema.define(version: 2021_07_26_034837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "dropoffs", force: :cascade do |t|
+  create_table "drops", force: :cascade do |t|
     t.string "name"
-    t.string "string"
-    t.string "school"
-    t.string "references"
-    t.bigint "group_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["group_id"], name: "index_dropoffs_on_group_id"
+    t.bigint "school_id", null: false
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
+    t.index ["school_id"], name: "index_drops_on_school_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -31,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_07_26_034234) do
     t.bigint "school_id", null: false
     t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6
-    t.string "drop"
+    t.bigint "drop"
     t.index ["school_id"], name: "index_groups_on_school_id"
   end
 
@@ -65,7 +62,8 @@ ActiveRecord::Schema.define(version: 2021_07_26_034234) do
     t.index ["school_id"], name: "index_students_on_school_id"
   end
 
-  add_foreign_key "dropoffs", "groups"
+  add_foreign_key "drops", "schools"
+  add_foreign_key "groups", "drops", column: "drop", name: "groups_drop_fkey"
   add_foreign_key "groups", "schools"
   add_foreign_key "lists", "groups"
   add_foreign_key "lists", "schools"

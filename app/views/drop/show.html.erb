@@ -1,0 +1,19 @@
+
+<br>
+<br>
+<br>
+
+
+
+
+
+<ul>
+<% @lists.each do |list| %>
+  <button style="height:50px;width:200px">
+  <%= link_to list.name, list %>
+  </button>
+<% end %>
+</ul>
+<br>
+<br>
+<br>
