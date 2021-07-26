@@ -4,9 +4,11 @@ class DropController < ApplicationController
    
 end
 
+
+
 def show
   @dro=Drop.find(params[:id])
-  @students = List.where(drop:params[:id]) 
+  @stdrop = List.where(drop:@dro.name, show:1) 
 end
 
 end
