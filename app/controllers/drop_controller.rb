@@ -6,7 +6,7 @@ end
 
 def show
   @dro=Drop.find(params[:id])
-  @students = List.where(drop:@dro, show:1) 
+  @students = List.where(drop:params[:id]) 
 end
 
 end
