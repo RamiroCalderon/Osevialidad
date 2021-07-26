@@ -3,7 +3,7 @@ class ListController < ApplicationController
   end
 
  def show
-    @dp=Drop.find(params[:id])
+    @dp=Drop.find(params[4)
     end
 
 end

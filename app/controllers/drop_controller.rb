@@ -1,13 +1,13 @@
 class DropController < ApplicationController
   def index
-    @drops = Drop.find(school_id:params[:id])
+    @drops = Drop.where(school_id:$yolas)
    
 end
 
 def show
-    @lists = Drop.where(school_id:$yolas)
-    @groups = Group.where(school_id:params[:id])
-    $ccc = @school
+  @dro=Drop.find(params[:id])
+  @students = List.where(drop:params[:id], show:1) 
 end
 
 end
+

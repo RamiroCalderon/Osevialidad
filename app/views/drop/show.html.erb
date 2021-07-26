@@ -1,19 +1,31 @@
+<meta http-equiv="refresh" content="3" />
 
+
+
+<%= $yo %>
+
+<h1>Alumnos <%= @dro.name %>  </h1>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+        
+      </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+       </tr>
+   <% end %>
+  </tbody>
+</table>
 <br>
 <br>
 <br>
-
-
-
-
-
-<ul>
-<% @lists.each do |list| %>
-  <button style="height:50px;width:200px">
-  <%= link_to list.name, list %>
-  </button>
-<% end %>
-</ul>
 <br>
 <br>
 <br>

@@ -13,3 +13,9 @@ class SchoolController < ApplicationController
     end
 
 end
+
+
+
+
+
+
